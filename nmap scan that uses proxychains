@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "enter the ip address that you to scan " ip
+
+echo "$ip"
+
+read -p "enter the name of your scan result " result 
+
+echo "$result"
+
+proxychains nmap -Pn -sV -p- --mtu 24 -ff -T4 -osscan-guess $ip -oN "$result"
+
+
+echo "Your scan is complete "  
+
+echo "disclaimer: any malicious use of the script doesnt hold the author responsible"
